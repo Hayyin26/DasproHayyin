@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistem Perpustakaan dengan Login</title>
+</head>
+<body>
+  <h1>Selamat Datang di Perpustakaan</h1>
+
+  <!-- Formulir Login -->
+  <form id="loginForm">
+    <label for="username">Nama Pengguna:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Kata Sandi:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- Kontainer untuk Menampilkan Pesan Galat -->
+  <div id="errorContainer" style="color: red;"></div>
+
+  <script>
+    // Database pengguna (dapat digantikan dengan database yang lebih aman)
+    const users = [
+      { username: 'user1', password: 'password1' },
+      { username: 'user2', password: 'password2' }
+    ];
+
+    // Mendapatkan elemen-elemen HTML
+    const loginForm = document.getElementById('loginForm');
+    const errorContainer = document.getElementById('errorContainer');
+
+    // Menangani submit formulir login
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Mendapatkan nilai dari input nama pengguna dan kata sandi
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Memeriksa apakah pengguna ada dalam database
+      const user = users.find(u => u.username === username && u.password === password);
+
+      if (user) {
+        // Jika login berhasil, arahkan ke halaman perpustakaan atau tampilkan pesan sukses
+        errorContainer.innerHTML = 'Login berhasil. Anda dapat mengakses perpustakaan.';
+        // Anda dapat menambahkan kode untuk mengarahkan ke halaman perpustakaan di sini
+      } else {
+        // Jika login gagal, tampilkan pesan galat
+        errorContainer.innerHTML = 'Nama pengguna atau kata sandi salah. Silakan coba lagi.';
+      }
+    });
+  </script>
+</body>
+</html> {
+  
+}
