@@ -17,5 +17,9 @@ public class PemilihanPercobaan125 {
         String output = angka % 2 == 0 ? "Angka " + angka + " bilangan genap" : "Angka " + angka + " bilangan ganjil";
         System.out.println(output);
 
+        // int x = 100;
+        // int y = x > 80 ? x++ : ++x;
+        // System.out.println(y);
+
     }
 }
