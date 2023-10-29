@@ -8,13 +8,17 @@ public class ArrayNilai25 {
 
         int[] NilaiAkhir = new int[10];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < NilaiAkhir.length; i++) {
             System.out.print("Masukkan nilai akhir ke-" + i + " : ");
             NilaiAkhir[i] = sc.nextInt();
         }
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("Nilai Akhir ke-" + i + " adalah " + NilaiAkhir[i]);
+            if (NilaiAkhir[i] > 70) {
+                System.out.println("Mahasiswa lulus" + i);
+            } else
+                System.out.println("Mahasiswa ke-" + i + "Tidak lulus!");
+
         }
 
     }
