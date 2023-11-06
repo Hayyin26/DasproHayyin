@@ -8,16 +8,15 @@ public class BubbleSortExample25 {
 
         for (int i = 0; i < intData.length; i++) {
             for (int j = 1; j < intData.length - i; j++) {
-                if (intData[j - 1] > intData[j]) {
+                if (intData[j - 1] < intData[j]) {
+                    // swap elemen
                     temp = intData[j];
                     intData[j] = intData[j - 1];
                     intData[j - 1] = temp;
-
                 }
             }
         }
-
-        System.out.println("Hasil pengurutan:");
+        System.out.println("Hasil pengurutan: ");
         for (int i = 0; i < intData.length; i++) {
             System.out.println(intData[i]);
         }
